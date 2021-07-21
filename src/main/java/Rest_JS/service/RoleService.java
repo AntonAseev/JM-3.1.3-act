@@ -1,6 +1,6 @@
-package com.example.spring_boot.service;
+package Rest_JS.service;
 
-import com.example.spring_boot.models.Role;
+import Rest_JS.models.Role;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.example.spring_boot.service;
+package Rest_JS.service;
 
-import com.example.spring_boot.dao.UserDao;
+import Rest_JS.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

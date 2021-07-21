@@ -1,4 +1,4 @@
-package com.example.spring_boot.config;
+package Rest_JS.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

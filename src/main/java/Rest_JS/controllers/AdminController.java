@@ -1,10 +1,9 @@
-package com.example.spring_boot.controllers;
+package Rest_JS.controllers;
 
-import com.example.spring_boot.service.RoleService;
-import com.example.spring_boot.service.UserService;
+import Rest_JS.service.RoleService;
+import Rest_JS.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,36 +1,33 @@
-package com.example.spring_boot.service;
+package Rest_JS.service;
 
-import com.example.spring_boot.dao.UserDao;
-import com.example.spring_boot.models.User;
+import Rest_JS.models.User;
+import Rest_JS.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Table;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
 
     private final UserDao userDao;
-    private final PasswordEncoder passwordEncoder;
+
 
     @Autowired
-    public UserServiceImpl(UserDao userDao, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
-        this.passwordEncoder = passwordEncoder;
+
     }
 
     @Override
     public User save(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(user.getPassword());
         return userDao.save(user);
     }
 
     @Override
     public User update(User user) {
-        user.setPassword(user.getPassword().isEmpty() ? findByUsername(user.getUsername()).getPassword() : passwordEncoder.encode(user.getPassword()));
+        user.setPassword(user.getPassword().isEmpty() ? findByUsername(user.getUsername()).getPassword() : user.getPassword());
         return userDao.save(user);
     }
 

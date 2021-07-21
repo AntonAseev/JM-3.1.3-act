@@ -1,4 +1,4 @@
-package com.example.spring_boot.models;
+package Rest_JS.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

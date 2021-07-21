@@ -1,6 +1,6 @@
-package com.example.spring_boot.dao;
+package Rest_JS.dao;
 
-import com.example.spring_boot.models.Role;
+import Rest_JS.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleDao extends JpaRepository<Role, Long> {

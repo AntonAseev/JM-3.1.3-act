@@ -1,7 +1,7 @@
-package com.example.spring_boot.service;
+package Rest_JS.service;
 
-import com.example.spring_boot.dao.RoleDao;
-import com.example.spring_boot.models.Role;
+import Rest_JS.dao.RoleDao;
+import Rest_JS.models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

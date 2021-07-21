@@ -1,26 +1,16 @@
-package com.example.spring_boot.controllers;
+package Rest_JS.controllers;
 
-import com.example.spring_boot.models.Role;
-import com.example.spring_boot.models.User;
-import com.example.spring_boot.service.RoleService;
-import com.example.spring_boot.service.UserService;
+import Rest_JS.models.Role;
+import Rest_JS.models.User;
+import Rest_JS.service.RoleService;
+import Rest_JS.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 @RequestMapping("/api")

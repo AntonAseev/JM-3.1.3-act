@@ -1,4 +1,4 @@
-package com.example.spring_boot.config.handler;
+package Rest_JS.config.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
