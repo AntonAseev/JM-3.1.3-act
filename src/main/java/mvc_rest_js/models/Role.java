@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +15,11 @@ import java.util.Set;
 @Table(name = "roles")
 public class Role implements GrantedAuthority {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String role;
+
     public Role(Long id, String role) {
         this.id = id;
         this.role = role;
@@ -24,12 +28,6 @@ public class Role implements GrantedAuthority {
     public Role(Long id) {
         this.id = id;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String role;
 
     @Transient
     @ManyToMany(mappedBy = "roles")
