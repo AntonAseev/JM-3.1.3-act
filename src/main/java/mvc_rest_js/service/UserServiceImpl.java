@@ -1,7 +1,7 @@
-package Rest_JS.service;
+package mvc_rest_js.service;
 
-import Rest_JS.models.User;
-import Rest_JS.dao.UserDao;
+import mvc_rest_js.models.User;
+import mvc_rest_js.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +12,9 @@ public class UserServiceImpl implements UserService{
 
     private final UserDao userDao;
 
-
     @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
-
     }
 
     @Override

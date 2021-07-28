@@ -1,4 +1,4 @@
-package Rest_JS.models;
+package mvc_rest_js.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,11 @@ import java.util.Set;
 @Table(name = "roles")
 public class Role implements GrantedAuthority {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String role;
+
     public Role(Long id, String role) {
         this.id = id;
         this.role = role;
@@ -24,12 +29,6 @@ public class Role implements GrantedAuthority {
     public Role(Long id) {
         this.id = id;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String role;
 
     @Transient
     @ManyToMany(mappedBy = "roles")

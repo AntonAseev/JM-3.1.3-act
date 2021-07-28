@@ -1,11 +1,10 @@
-package Rest_JS.models;
+package mvc_rest_js.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
@@ -23,11 +22,9 @@ public class User implements UserDetails {
 
     private String name;
 
-    private String lastname;
-
     private int age;
 
-    private String username;
+    private String email;
 
     private String password;
 
@@ -40,6 +37,11 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
     }
 
     @Override
@@ -62,7 +64,7 @@ public class User implements UserDetails {
         return true;
     }
 
-    public String getRolesForLabel() {
+    public String getRoles() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Role role : roles) {
             stringBuilder.append(role.getRole().substring(5)).append(" ");
@@ -70,15 +72,16 @@ public class User implements UserDetails {
         return stringBuilder.toString();
     }
 
-    public UserDetails getUserDetails() {
-        return new org.springframework.security.core.userdetails.User(
-                username,
-                password,
-                isEnabled(),
-                isAccountNonExpired(),
-                isCredentialsNonExpired(),
-                isAccountNonLocked(),
-                roles
-        );
-    }
+
+//    public UserDetails getUserDetails() {
+//        return new org.springframework.security.core.userdetails.User(
+//                name,
+//                password,
+//                isEnabled(),
+//                isAccountNonExpired(),
+//                isCredentialsNonExpired(),
+//                isAccountNonLocked(),
+//                roles
+//        );
+//    }
 }

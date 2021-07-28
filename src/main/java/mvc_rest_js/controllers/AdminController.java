@@ -1,7 +1,7 @@
-package Rest_JS.controllers;
+package mvc_rest_js.controllers;
 
-import Rest_JS.service.RoleService;
-import Rest_JS.service.UserService;
+import mvc_rest_js.service.RoleService;
+import mvc_rest_js.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController {
+public class  AdminController {
 
     @Autowired
     private UserService userService;

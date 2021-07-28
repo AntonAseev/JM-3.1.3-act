@@ -10,7 +10,7 @@
 <body class="bg-light">
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" th:text = "${user.getUsername() + ' with roles: ' + user.getRolesForLabel()}">Company name</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" th:text = "${user.getUsername() + ' with roles: ' + user.getRoles()}">Company name</a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" th:href="@{/logout}">Logout</a>
@@ -50,20 +50,18 @@
               <thead>
               <tr>
                 <th>ID</th>
-                <th>Lastname</th>
                 <th>Name</th>
                 <th>Age</th>
-                <th>Username</th>
+                <th>Email</th>
                 <th>Role</th>
               </tr>
               </thead>
               <tbody>
                 <tr>
                   <td th:text="${user.getId()}">Value</td>
-                  <td th:text="${user.getLastname()}">Value</td>
                   <td th:text="${user.getName()}">Value</td>
                   <td th:text="${user.getAge()}">Value</td>
-                  <td th:text="${user.getUsername()}">Value</td>
+                  <td th:text="${user.getEmail()}">Value</td>
                   <td th:text="${user.getRoles()}">Value</td>
                 </tr>
               </tbody>
