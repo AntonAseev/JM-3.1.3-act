@@ -1,6 +1,6 @@
-package Rest_JS.service;
+package mvc_rest_js.service;
 
-import Rest_JS.models.Role;
+import mvc_rest_js.models.Role;
 
 import java.util.List;
 

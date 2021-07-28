@@ -1,6 +1,6 @@
-package Rest_JS.dao;
+package mvc_rest_js.dao;
 
-import Rest_JS.models.User;
+import mvc_rest_js.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserDao extends JpaRepository<User, Long> {

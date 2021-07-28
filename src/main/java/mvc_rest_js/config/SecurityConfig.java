@@ -1,6 +1,6 @@
-package Rest_JS.config;
+package mvc_rest_js.config;
 
-import Rest_JS.config.handler.LoginSuccessHandler;
+import mvc_rest_js.config.handler.LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

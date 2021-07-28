@@ -1,7 +1,7 @@
-package Rest_JS.service;
+package mvc_rest_js.service;
 
-import Rest_JS.dao.RoleDao;
-import Rest_JS.models.Role;
+import mvc_rest_js.dao.RoleDao;
+import mvc_rest_js.models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

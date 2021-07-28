@@ -22,10 +22,9 @@ function addUserRow(user) {
     tbody.append(
         "<tr>" +
         "<td>" + user.id + "</td>" +
-        "<td>" + user.lastname + "</td>" +
-        "<td>" + user.name + "</td>" +
-        "<td>" + user.age + "</td>" +
         "<td>" + user.username + "</td>" +
+        "<td>" + user.age + "</td>" +
+        "<td>" + user.email + "</td>" +
         "<td>" + user.roles.map(role => role.role.substr(5)) + "</td>" +
         "<td><button class='btn btn-primary' onclick='event.preventDefault(); editModal(" + user.id + ")'>Edit</button></td>" +
         "<td><button class='btn btn-danger' onclick='event.preventDefault(); deleteModal(" + user.id + ")'>Delete</button></td>" +
@@ -52,10 +51,9 @@ function deleteModal(userId) {
 
     $('#password').hide();
     $('#passwordLabel').hide();
-    $('#name').prop('readonly', true);
-    $('#lastname').prop('readonly', true);
-    $('#age').prop('readonly', true);
     $('#username').prop('readonly', true);
+    $('#age').prop('readonly', true);
+    $('#email').prop('readonly', true);
     $('#role').prop('disabled', true);
     $('#submitButton').text('Delete').addClass('btn btn-danger').attr('onClick', 'deleteUser('+ userId + ');');
     $('#method').val('delete');
@@ -77,10 +75,9 @@ function deleteUser(userId) {
 function createUser() {
     let form = $('#newuser');
     let user = {
-        'name': form.find('#addName').val(),
-        'lastname': form.find('#addLastname').val(),
-        'age': parseInt(form.find('#addAge').val()),
         'username': form.find('#addUsername').val(),
+        'age': parseInt(form.find('#addAge').val()),
+        'email': form.find('#addEmail').val(),
         'password': form.find('#addPassword').val(),
         'roles': form.find('#roless').val().map(id => parseInt(id))
     };
@@ -110,10 +107,9 @@ async function updateUser(userId) {
     let form = $('#editModal');
     let user = {
         'id': userId,
-        'name': form.find('#name').val(),
-        'lastname': form.find('#lastname').val(),
-        'age': parseInt(form.find('#age').val()),
         'username': form.find('#username').val(),
+        'age': parseInt(form.find('#age').val()),
+        'email': form.find('#email').val(),
         'password': form.find('#password').val(),
         'roles': form.find('#role').val().map(id => parseInt(id))
     };
@@ -127,10 +123,9 @@ async function updateUser(userId) {
 
     await fetch(request).then((response) => {
         response.json().then((userReturned) => {
-            $("#name" + userReturned.id).text(userReturned.name);
-            $("#lastname" + userReturned.id).text(userReturned.lastname);
-            $("#age" + userReturned.id).text(userReturned.age);
             $("#username" + userReturned.id).text(userReturned.username);
+            $("#age" + userReturned.id).text(userReturned.age);
+            $("#email" + userReturned.id).text(userReturned.email);
             $("#role" + userReturned.id).text(userReturned.roles.map(role => role.name));
             console.log(userReturned);
             tbody.empty();
@@ -147,10 +142,9 @@ function getUserById(userId) {
         if (response.ok) {
             response.json().then((user) => {
                 $('#method').val('patch');
-                $('#lastname').val(user.lastname);
-                $('#name').val(user.name);
-                $('#age').val(user.age);
                 $('#username').val(user.username);
+                $('#age').val(user.age);
+                $('#email').val(user.email);
             })
         } else {
             console.error(response.status + " - " + response.statusText);
@@ -179,10 +173,9 @@ $('#editModal').on('hidden.bs.modal', function () {
 });
 
 function clearModalFormField() {
-    $('#name').val('').prop('readonly', false);
-    $('#lastname').val('').prop('readonly', false);
-    $('#age').val('').prop('readonly', false);
     $('#username').val('').prop('readonly', false);
+    $('#age').val('').prop('readonly', false);
+    $('#email').val('').prop('readonly', false);
     $('#password').show().val('').prop('readonly', false);
     $('#passwordLabel').show();
     $('#role').prop('disabled', false);
@@ -191,10 +184,9 @@ function clearModalFormField() {
 }
 
 function clearNewFormField() {
-    $('#addName').val('');
-    $('#addLastname').val('');
-    $('#addAge').val('');
     $('#addUsername').val('');
+    $('#addAge').val('');
+    $('#addEmail').val('');
     $('#addPassword').val('');
     $('#roless option').prop('selected', false)
 }

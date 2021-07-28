@@ -8,17 +8,14 @@
 <body>
 
 <form th:method="POST" th:action="@{/admin}" th:object="${user}">
-    <label for="name">Name</label>
-    <input name="name" th:field="*{name}" id="name"/>
-    <br>
-    <label for="surname">Surname</label>
-    <input name="surname" th:field="*{lastname}" id="surname"/>
+    <label for="username">Username</label>
+    <input name="username" th:field="*{username}" id="username"/>
     <br>
     <label for="age">Age</label>
     <input name="age" th:field="*{age}" id="age"/>
     <br>
-    <label for="username">Username</label>
-    <input name="username" th:field="*{username}" id="username"/>
+    <label for="email">Email</label>
+    <input name="email" th:field="*{email}" id="email"/>
     <br>
     <label for="password">Password</label>
     <input name="password" th:field="*{password}" id="password"/>

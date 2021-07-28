@@ -1,4 +1,4 @@
-package Rest_JS.config;
+package mvc_rest_js.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

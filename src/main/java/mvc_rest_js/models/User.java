@@ -1,4 +1,4 @@
-package Rest_JS.models;
+package mvc_rest_js.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,13 +21,11 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
-    private String lastname;
+    private String username;
 
     private int age;
 
-    private String username;
+    private String email;
 
     private String password;
 

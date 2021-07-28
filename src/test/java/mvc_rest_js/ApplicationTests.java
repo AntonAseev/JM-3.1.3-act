@@ -1,4 +1,4 @@
-package Rest_JS;
+package mvc_rest_js;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

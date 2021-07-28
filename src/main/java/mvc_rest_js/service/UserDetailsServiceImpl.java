@@ -1,6 +1,6 @@
-package Rest_JS.service;
+package mvc_rest_js.service;
 
-import Rest_JS.dao.UserDao;
+import mvc_rest_js.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

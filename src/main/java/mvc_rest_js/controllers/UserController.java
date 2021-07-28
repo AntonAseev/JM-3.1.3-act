@@ -1,7 +1,7 @@
-package Rest_JS.controllers;
+package mvc_rest_js.controllers;
 
-import Rest_JS.models.User;
-import Rest_JS.service.UserService;
+import mvc_rest_js.models.User;
+import mvc_rest_js.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

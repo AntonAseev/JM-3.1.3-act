@@ -1,4 +1,4 @@
-package Rest_JS.models;
+package mvc_rest_js.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

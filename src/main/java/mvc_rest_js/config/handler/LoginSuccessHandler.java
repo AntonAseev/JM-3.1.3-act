@@ -1,4 +1,4 @@
-package Rest_JS.config.handler;
+package mvc_rest_js.config.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
